@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "urmasa tar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -166.2, "left": -102.8, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": -106.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 161.9, "left": 297.4, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -151.2,
+      "left": -36.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -99.78,
+      "left": 231.52,
+      "attrs": { "digits": "4" }
+    }
+  ],
+  "connections": [
+    [ "uno:A0", "pot1:SIG", "green", [ "v38.3", "h234.2" ] ],
+    [ "uno:GND.2", "pot1:GND", "black", [ "v19.1", "h253.5" ] ],
+    [ "uno:GND.1", "bb1:bn.1", "black", [ "v-28.8", "h-66.9" ] ],
+    [ "bb1:bn.50", "bb1:tn.50", "black", [ "v-1.3", "h76", "v-172.8" ] ],
+    [ "uno:5V", "bb1:bp.2", "red", [ "v28.7", "h-169", "v-249.6", "h76.8" ] ],
+    [ "bb1:bp.50", "bb1:tp.50", "red", [ "v-0.9", "h85.6", "v-172.8" ] ],
+    [ "pot1:VCC", "bb1:bp.40", "red", [ "v28.8", "h37.6" ] ],
+    [ "bz1:2", "bb1:9b.f", "red", [ "v0" ] ],
+    [ "bz1:1", "bb1:8b.f", "black", [ "v0" ] ],
+    [ "uno:1", "bb1:9b.j", "red", [ "v-48", "h-139.8", "v-57.6" ] ],
+    [ "uno:2", "bb1:40t.a", "green", [ "v-28.8", "h474.5", "v-249.6", "h-307.2" ] ],
+    [ "sevseg1:A", "bb1:41t.c", "", [ "$bb" ] ],
+    [ "sevseg1:B", "bb1:45t.c", "", [ "$bb" ] ],
+    [ "sevseg1:C", "bb1:43b.h", "", [ "$bb" ] ],
+    [ "sevseg1:D", "bb1:41b.h", "", [ "$bb" ] ],
+    [ "sevseg1:E", "bb1:40b.h", "", [ "$bb" ] ],
+    [ "sevseg1:F", "bb1:42t.c", "", [ "$bb" ] ],
+    [ "sevseg1:G", "bb1:44b.h", "", [ "$bb" ] ],
+    [ "sevseg1:DP", "bb1:42b.h", "", [ "$bb" ] ],
+    [ "sevseg1:DIG1", "bb1:40t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG2", "bb1:43t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG3", "bb1:44t.c", "", [ "$bb" ] ],
+    [ "sevseg1:DIG4", "bb1:45b.h", "", [ "$bb" ] ],
+    [ "sevseg1:COM", "bb1:46b.h", "", [ "$bb" ] ],
+    [ "sevseg1:CLN", "bb1:46t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
