@@ -33,12 +33,26 @@ int posicion(double dist){
   return 0;
 }
 
-int degree(double ln, int past_deg){
+int status = 1;
 
+int degree(double ln, int past_deg){ // To set posicion for servo_motor
 
+  int result;
 
-  return 0;
+  if (ln <= 20){
+    //savve posicion
+    result = past_deg;
+  }else{
+    // count the new one
+    result = past_deg + 5 * status;
+    if(result >= 140) status = -1;
+    if(result <= 40) status = 1;
+  }
+
+  return result;
 }
+
+int serv_pos = 40;
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -54,14 +68,18 @@ void loop() {
   delay(5000);
   */
 
-  // position for servo01
-
-  posicion(distance);
-
+  // positio for servo01
+  // 1) First option -> posision calculates by length befor aim
+  // posicion(distance);
+  
+  // 2) Find the nearest aim on robots way
+  // Move servo motor untile i will find aim near than 100 cm
+  serv_pos = degree(distance, serv_pos);
+  servo1.write(serv_pos);
 
   Serial.print("Measured distance: ");
   Serial.println(readDistanceCM());
 
-  delay(1000);
+  delay(50);
 }
 
