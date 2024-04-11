@@ -22,5 +22,6 @@
 <p>Add length sensor to calculate length betwet robot and nearest wall(object)</p>
 <p>Also add freezing </p>
 
-<a href = "">Example for project</a>
+<a href = "https://wokwi.com/projects/374644935912458241">Servo example for project</a>
 
+<a href = "https://wokwi.com/projects/290056311044833800">Ultra Sonic Sensor</a>
