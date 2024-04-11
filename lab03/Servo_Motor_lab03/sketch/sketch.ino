@@ -1,8 +1,8 @@
 #include <Servo.h>
-int servoPin=11;
+int servoPin=8;
 
-#define ECHO_PIN 2
-#define TRIG_PIN 3
+#define ECHO_PIN 22
+#define TRIG_PIN 23
 
 Servo servo1;
 void setup() {
@@ -82,4 +82,3 @@ void loop() {
 
   delay(50);
 }
-
