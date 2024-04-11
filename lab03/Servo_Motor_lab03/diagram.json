@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "urmasa tar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 29.4, "left": -154.2, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -161.7,
+      "left": -4.1,
+      "attrs": { "distance": "89" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 94, "left": 182.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:11", "servo1:PWM", "purple", [ "v-86.4", "h173.4", "v211.2" ] ],
+    [ "uno:GND.1", "servo1:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "servo1:V+", "red", [ "v19.1", "h138.2", "v-86.4" ] ],
+    [ "uno:3", "ultrasonic1:TRIG", "gray", [ "v0" ] ],
+    [ "uno:2", "ultrasonic1:ECHO", "violet", [ "v0" ] ],
+    [ "uno:GND.2", "ultrasonic1:GND", "black", [ "v47.9", "h-188.1", "v-259.2", "h19.2" ] ],
+    [ "uno:5V", "ultrasonic1:VCC", "red", [ "v-96.1", "h-217", "v-182.4", "h278.4" ] ]
+  ],
+  "dependencies": {}
+}
